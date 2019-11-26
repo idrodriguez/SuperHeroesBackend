@@ -11,7 +11,7 @@ app.config["MONGO_URI"] = env('MONGODB_URI')
 mongo = PyMongo(app)
 
 # Routing definition
-@app.route('/list')
+@app.route('/')
 def superheroes():
     superheroes = mongo.db.SuperHero.find()
     resp = dumps(superheroes)
